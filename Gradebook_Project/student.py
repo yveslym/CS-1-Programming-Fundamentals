@@ -1,3 +1,6 @@
+import uuid
+
+
 class Student(Object):
     '''Class of student objects that will populate each class roster.
 
@@ -12,8 +15,9 @@ class Student(Object):
     grade_in_class: Float.  A running average of the student's overall grade in the class. Will be set to None
         until an assignment has been graded and passed to the Assignments dictionary.
 
-    assignments: Dictionary {Assignment name (Str): Grade (Float)}.  A record of all assignments
-        the student has completed, and the grade he or she has earned on each.
+    assignments: Dictionary {Assignment name (Str): Grade (Float)}.
+        A record of all assignmentsthe student has completed, and
+        the grade he or she has earned on each.
         Dictionary is empty on initialization
 
     _____Methods________
@@ -44,9 +48,9 @@ class Student(Object):
             by the number of total assignments in the Assignment Dictionary.
      '''
 
- def __init__(self, name, student_ID):
+ def __init__(self, name):
      self.name = name
-     self.student_ID = student_ID
+     self.student_ID = uuid.uuid4().hex[:10]
      self.grade_in_class = None
      self.assignments = {}
 
@@ -56,11 +60,29 @@ def _update_grade_in_class():
     self.grade_in_class = (point_total / num_assignments)
 
 def update_grade_for_assignment(self, assignment_name, grade):
+    if assignment_name in self.assignments:
+        self.assignments[assignment_name] = grade
+    else:
+        print('there is not %s assignment in the record' %s (assignment_name))
     pass
 
+# delete a specific assignment then update grade in class
 def delete_assignment(self, assignment_name):
     pass
+    if assignment_name in self.assignment:
+        del self.assignment[assignment_name]
+    else:
+        print('there is not %s assignment in the record' %s (assignment_name))
+
 
 def add_assignment(self, assignment_name, grade):
-    self.assignments[name] = grade
+
+    if self.assignments[assignment_name] is None:
+        self.assignments[name] = grade
+    else
+        index = 1
+        while self.assignments[assignment_name+str(index)] is not None:
+            self.assignments[assignment_name+str(index)] = grade
+            index = index+1
+
     self._update_grade_in_class()
