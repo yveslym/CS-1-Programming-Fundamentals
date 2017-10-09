@@ -1,7 +1,7 @@
 import uuid
 
 
-class Student(Object):
+
     '''Class of student objects that will populate each class roster.
 
     Each student object contains the following attributes:
@@ -47,42 +47,42 @@ class Student(Object):
         Calculates the student's grade in class by dividing the student's cumulative assignment scores
             by the number of total assignments in the Assignment Dictionary.
      '''
+class Student(Object):
+    def __init__(self, name):
+        self.name = name
+        self.student_ID = uuid.uuid4().hex[:10]
+        self.grade_in_class = None
+        self.assignments = {}
 
- def __init__(self, name):
-     self.name = name
-     self.student_ID = uuid.uuid4().hex[:10]
-     self.grade_in_class = None
-     self.assignments = {}
+    def _update_grade_in_class():
+        point_total = sum(list(self.assignments.values()))
+        num_assignments = len(self.assignments)
+        self.grade_in_class = (point_total / num_assignments)
 
-def _update_grade_in_class():
-    point_total = sum(list(self.assignments.values()))
-    num_assignments = len(self.assignments)
-    self.grade_in_class = (point_total / num_assignments)
-
-def update_grade_for_assignment(self, assignment_name, grade):
-    if assignment_name in self.assignments:
-        self.assignments[assignment_name] = grade
-    else:
-        print('there is not %s assignment in the record' %s (assignment_name))
-    pass
+    def update_grade_for_assignment(self, assignment_name, grade):
+        if assignment_name in self.assignments:
+            self.assignments[assignment_name] = grade
+            self.update_grade_in_class()
+        else:
+            print('there is not %s assignment in the record' %s (assignment_name))
+        pass
 
 # delete a specific assignment then update grade in class
-def delete_assignment(self, assignment_name):
-    pass
-    if assignment_name in self.assignment:
-        del self.assignment[assignment_name]
-    else:
-        print('there is not %s assignment in the record' %s (assignment_name))
+    def delete_assignment(self, assignment_name):
 
+        if assignment_name in self.assignment:
+            del self.assignment[assignment_name]
+        else:
+            print('there is not %s assignment in the record' %s (assignment_name))
+        pass
 
-def add_assignment(self, assignment_name, grade):
+    def add_assignment(self, assignment_name, grade):
 
-    if self.assignments[assignment_name] is None:
-        self.assignments[name] = grade
-    else
-        index = 1
-        while self.assignments[assignment_name+str(index)] is not None:
-            self.assignments[assignment_name+str(index)] = grade
-            index = index+1
-
-    self._update_grade_in_class()
+        if self.assignments[assignment_name] is None:
+            self.assignments[name] = grade
+        else
+            index = 1
+            while self.assignments[assignment_name+str(index)] is not None:
+                self.assignments[assignment_name+str(index)] = grade
+                index = index+1
+                self._update_grade_in_class()
