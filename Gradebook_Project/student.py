@@ -1,8 +1,7 @@
 import uuid
 
 
-
-    '''Class of student objects that will populate each class roster.
+'''Class of student objects that will populate each class roster.
 
     Each student object contains the following attributes:
 
@@ -80,7 +79,7 @@ class Student(Object):
 
         if self.assignments[assignment_name] is None:
             self.assignments[name] = grade
-        else
+        else:
             index = 1
             while self.assignments[assignment_name+str(index)] is not None:
                 self.assignments[assignment_name+str(index)] = grade

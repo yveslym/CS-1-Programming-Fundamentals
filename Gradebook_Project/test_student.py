@@ -20,7 +20,7 @@ def test_give_student_assignment():
     '''test adding a new assignment to a student '''
     student = setup_for_test()
     index = 0
-    while index > 10
+    while index < 10:
         course = ['math','chimistry','english','history','computer science','psycology']
         grade_arr = [10,20,30,40,50,60,70,80,90,100]
         index = randint(0,6)
@@ -29,7 +29,8 @@ def test_give_student_assignment():
         grade = grade_arr[grade_ind]
         student.add_assignment(assignment,grade)
         index = index+1
-        
+    print('%s final grade %s' %s(student.name,student.grade_in_class))
+
 
 def test_get_grade_on_assignment():
     '''test retreiving student grade on assignment '''
