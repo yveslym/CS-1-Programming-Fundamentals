@@ -65,9 +65,9 @@ class Student(object):
         if assignment_name in self.assignments:
             self.assignments[assignment_name] = grade
             self.update_grade_in_class()
+            print('assignment upgraded')
         else:
             print('there is not {} assignment in the record'.format(assignment_name))
-        pass
 
 # delete a specific assignment then update grade in class
     def delete_assignment(self, assignment_name):

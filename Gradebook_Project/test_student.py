@@ -10,7 +10,7 @@ def test_student_creation():
 
 def setup_for_test():
 
-    print('________________TEST STUDENT CREATION__________________')
+    print('________________SETUP STUDENT__________________')
     name_file = "/Users/yveslym/Desktop/portfolio/MOB2/trip-planner/name.txt"
     open_name_file = open(name_file).read().split()
     fname = open_name_file[random.randint(0, len(open_name_file) - 1)]
@@ -27,7 +27,7 @@ def setup_for_test():
         assignment = course[index]
         grade = grade_arr[grade_ind]
         student.add_assignment(assignment,grade)
-        print ('assignment '+assignment+' grade '+str(grade))
+        # print ('assignment '+assignment+' grade '+str(grade))
         ind = ind+1
     return student
 
@@ -39,18 +39,26 @@ def setup_for_test():
 
 
 def test_get_grade_on_assignment():
+    print('________________TEST GET GRADE ON ASSIGNMENT__________________')
     '''test retreiving student grade on assignment '''
     student = setup_for_test()
     student._update_grade_in_class()
     print(student.name+'grade in class is '+str(student.grade_in_class))
 
 def test_delete_assignment():
+    print('________________TEST DELETE ASSIGNMENT__________________')
     student = setup_for_test()
+    print(' number of assignment before deletion',str(len(student.assignments)))
+
     student.delete_assignment('Math')
 
+    print(' number of assignment after deletion',str(len(student.assignments)))
+
 def test_update_grade_for_assignment():
+    print('________________TEST UPDATE GRADE__________________')
     '''test updating a grade for a student's assignment '''
     student = setup_for_test()
+
     student.update_grade_for_assignment('English',50)
     student.update_grade_for_assignment('cs1',90)
 
@@ -61,6 +69,7 @@ def test_update_grade_for_assignment():
 
 
 def test__update_grade_in_class():
+    print('________________TEST UPDATE GRADE__________________')
     '''tests helper method _update_grade_in_class().  Any time an assignment and grade are added to a dictionary,
     this method is called.  It recalculates the student's GPA for the class and then updates the value of self.grade_in_class '''
     student = setup_for_test()
