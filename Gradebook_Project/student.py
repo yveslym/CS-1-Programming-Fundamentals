@@ -52,6 +52,9 @@ class Student(object):
         self.student_ID = uuid.uuid4().hex[:10]
         self.grade_in_class = None
         self.assignments = {}
+        self.gpa = None
+
+    #def update_gpa(self):
 
     def _update_grade_in_class(self):
         point_total = sum(list(self.assignments.values()))
@@ -63,7 +66,7 @@ class Student(object):
             self.assignments[assignment_name] = grade
             self.update_grade_in_class()
         else:
-            print('there is not %s assignment in the record' %s (assignment_name))
+            print('there is not %s assignment in the record', %s (assignment_name))
         pass
 
 # delete a specific assignment then update grade in class
@@ -77,11 +80,12 @@ class Student(object):
 
     def add_assignment(self, assignment_name, grade):
 
-        if self.assignments[assignment_name] is None:
-            self.assignments[name] = grade
-        else:
-            index = 1
-            while self.assignments[assignment_name+str(index)] is not None:
-                self.assignments[assignment_name+str(index)] = grade
-                index = index+1
-                self._update_grade_in_class()
+        # if self.assignments[assignment_name] is None:
+
+        self.assignments[assignment_name] = grade
+        # else:
+        #     index = 1
+        #     while self.assignments[assignment_name+str(index)] is not None:
+        #         self.assignments[assignment_name+str(index)] = grade
+        #         index = index+1
+        #         self._update_grade_in_class()
