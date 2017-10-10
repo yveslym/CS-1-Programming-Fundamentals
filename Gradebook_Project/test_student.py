@@ -19,7 +19,7 @@ def setup_for_test():
     student = Student(fname+ ' '+lname)
     print('student '+student.name)
     ind = 0
-    while ind < 10:
+    while ind < 5:
         course = ['math','chimistry','english','history','computer science','psycology']
         grade_arr = [10,20,30,40,50,60,70,80,90,100]
         index = randint(0,5)
