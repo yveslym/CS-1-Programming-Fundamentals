@@ -72,7 +72,7 @@ class Student(object):
 # delete a specific assignment then update grade in class
     def delete_assignment(self, assignment_name):
 
-        if assignment_name in self.assignment:
+        if assignment_name in self.assignments:
             del self.assignment[assignment_name]
         else:
             print('there is not {} assignment in the record'.format(assignment_name) )
