@@ -10,6 +10,7 @@ def test_student_creation():
 
 def setup_for_test():
 
+    print('________________TEST STUDENT CREATION__________________')
     name_file = "/Users/yveslym/Desktop/portfolio/MOB2/trip-planner/name.txt"
     open_name_file = open(name_file).read().split()
     fname = open_name_file[random.randint(0, len(open_name_file) - 1)]
@@ -43,9 +44,9 @@ def test_get_grade_on_assignment():
     student._update_grade_in_class()
     print(student.name+'grade in class is '+str(student.grade_in_class))
 
-# def test_delete_assignment():
-#     student = setup_for_test()
-#     student.delete_assignment('Math')
+def test_delete_assignment():
+    student = setup_for_test()
+    student.delete_assignment('Math')
 
 def test_update_grade_for_assignment():
     '''test updating a grade for a student's assignment '''
@@ -65,3 +66,10 @@ def test__update_grade_in_class():
     student = setup_for_test()
     student._update_grade_in_class()
     print('student overall grade: '+str(student.grade_in_class))
+
+if __name__ =='__main__':
+    setup_for_test()
+    test_get_grade_on_assignment()
+    test_delete_assignment()
+    test_update_grade_for_assignment()
+    test__update_grade_in_class()

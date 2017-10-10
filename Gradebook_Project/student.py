@@ -66,7 +66,7 @@ class Student(object):
             self.assignments[assignment_name] = grade
             self.update_grade_in_class()
         else:
-            print('there is not %s assignment in the record', %s (assignment_name))
+            print('there is not {} assignment in the record'.format(assignment_name))
         pass
 
 # delete a specific assignment then update grade in class
@@ -75,7 +75,7 @@ class Student(object):
         if assignment_name in self.assignment:
             del self.assignment[assignment_name]
         else:
-            print('there is not %s assignment in the record' %s (assignment_name))
+            print('there is not {} assignment in the record'.format(assignment_name) )
         pass
 
     def add_assignment(self, assignment_name, grade):
@@ -89,3 +89,7 @@ class Student(object):
         #         self.assignments[assignment_name+str(index)] = grade
         #         index = index+1
         #         self._update_grade_in_class()
+
+if __name__=='__main__':
+    student = Student('yves')
+    print(student.name)
