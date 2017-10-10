@@ -1,3 +1,8 @@
 {
-  "test_student.py": true
+  "test_student.py::test__update_grade_in_class": true,
+  "test_student.py::test_delete_assignment": true,
+  "test_student.py::test_get_GPA": true,
+  "test_student.py::test_get_grade_on_assignment": true,
+  "test_student.py::test_give_student_assignment": true,
+  "test_student.py::test_update_grade_for_assignment": true
 }

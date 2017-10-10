@@ -46,14 +46,14 @@ import uuid
         Calculates the student's grade in class by dividing the student's cumulative assignment scores
             by the number of total assignments in the Assignment Dictionary.
      '''
-class Student(Object):
+class Student(object):
     def __init__(self, name):
         self.name = name
         self.student_ID = uuid.uuid4().hex[:10]
         self.grade_in_class = None
         self.assignments = {}
 
-    def _update_grade_in_class():
+    def _update_grade_in_class(self):
         point_total = sum(list(self.assignments.values()))
         num_assignments = len(self.assignments)
         self.grade_in_class = (point_total / num_assignments)

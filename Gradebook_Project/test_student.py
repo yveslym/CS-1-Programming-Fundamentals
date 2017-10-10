@@ -1,4 +1,4 @@
-import student
+from student import Student
 import pytest
 from random import randint
 
@@ -14,11 +14,7 @@ def setup_for_test():
     lname = open_name_file[random.randint(0, len(open_name_file) - 1)]
 
     student = Student(fname+ ' '+lname)
-    return student
-
-def test_give_student_assignment():
-    '''test adding a new assignment to a student '''
-    student = setup_for_test()
+    print(student.name)
     index = 0
     while index < 10:
         course = ['math','chimistry','english','history','computer science','psycology']
@@ -29,15 +25,25 @@ def test_give_student_assignment():
         grade = grade_arr[grade_ind]
         student.add_assignment(assignment,grade)
         index = index+1
-    print('%s final grade %s' %s(student.name,student.grade_in_class))
+
+    return student
+
+def test_give_student_assignment():
+    '''test adding a new assignment to a student '''
+    student = setup_for_test()
+
+
 
 
 def test_get_grade_on_assignment():
     '''test retreiving student grade on assignment '''
     student = setup_for_test()
+    student._update_grade_in_class()
+    print('%s grade in class is %s', %s(student.name,student.grade_in_class))
 
 def test_delete_assignment():
     student = setup_for_test()
+    student.delete_assignment('Math')
 
 def test_update_grade_for_assignment():
     '''test updating a grade for a student's assignment '''
@@ -46,6 +52,7 @@ def test_update_grade_for_assignment():
 def test_get_GPA():
     '''tests getting student's average in the class '''
     student = setup_for_test()
+
 
 def test__update_grade_in_class():
     '''tests helper method _update_grade_in_class().  Any time an assignment and grade are added to a dictionary,
